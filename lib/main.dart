@@ -78,9 +78,10 @@ Timer? timer;
     ), (String taskId) async {  // <-- Event handler
       // This is the fetch-event callback.
       print("[BackgroundFetch] Event received $taskId");
-    
-
+     setState(() {
   Notif.showBigTextNotification(title: "New message title", body: "Your long body", fln: flutterLocalNotificationsPlugin);
+      });
+
               
 
   
@@ -109,6 +110,8 @@ void _onClickEnable(enabled) {
     });
     if (enabled) {
       BackgroundFetch.start().then((int status) {
+          Notif.showBigTextNotification(title: "New message title", body: "Your long body", fln: flutterLocalNotificationsPlugin);
+
         print('[BackgroundFetch] start success: $status');
       }).catchError((e) {
         print('[BackgroundFetch] start FAILURE: $e');
