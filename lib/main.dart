@@ -79,10 +79,10 @@ Timer? timer;
       // This is the fetch-event callback.
       print("[BackgroundFetch] Event received $taskId");
     
-Timer.periodic(const Duration(seconds: 15), (timer) {
+
   Notif.showBigTextNotification(title: "New message title", body: "Your long body", fln: flutterLocalNotificationsPlugin);
               
-});
+
   
 
       // IMPORTANT:  You must signal completion of your task or the OS can punish your app
